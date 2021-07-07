@@ -19,7 +19,13 @@ Open the project on your terminal and use below command to work on your local ma
 cd client
 npm install 
 ```
-**4.** Now run the file through docker.
+**4.** Now create a docker image
+```
+docker build -t specify_your_name_for_image .
+
+```
+
+**4.** Now create a docker container.
 
 ```
 docker run -d -p 3000:3000 --name give_a_name react-image
