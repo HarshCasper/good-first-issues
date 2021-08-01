@@ -52,6 +52,7 @@ Finally, commit your changes by using the command:
     `git commit -m "A message you want to add"`
 
  **NOTE**: A PR should have only one commit. Multiple commits should be squashed.
+ 
 
 Also, make your changes available in your forked repository by using the command:
 
