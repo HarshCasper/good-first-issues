@@ -3,6 +3,7 @@
 Welcome to the **good-first-issues** project!. All the new contributors can use this ready reference to kick start their contribution to this project.
 
 ## Step 1:
+
 The very first step is pretty simple, all you have to do is go to the issues option on the navigation bar (refer the image below) and click on it.
 You will be redirected to the all the issues which are put up by the mentor.
 
@@ -62,4 +63,5 @@ Also, make your changes available in your forked repository by using the command
 
 Go to your repository in browser and click on compare and pull requests. Then add a title and description to your pull request that explains your contribution.
 Hurrah! your pull request has been created and will be reviewed by the mentors and merged if its all right!
+
 
