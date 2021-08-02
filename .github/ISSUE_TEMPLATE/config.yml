@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Good-First-Issues
+    url: https://github.com/HarshCasper/good-first-issues
+    about: Please ask and answer questions here.
+  - name: GitHub Security Bug Bounty
+    url: https://bounty.github.com/
+    about: Please report security vulnerabilities here.
