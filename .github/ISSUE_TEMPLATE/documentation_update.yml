@@ -5,11 +5,11 @@ labels: '[Documentation]'
 body:
   - type: markdown
     attributes:
-      value: Thanks for taking the time to fill out this bug report!
+      value: Thanks for taking the time to fill out this documentation update report!
   - type: checkboxes
     attributes:
       label: Is there an existing issue for this?
-      description: Please search to see if an issue already exists for the bug you encountered.
+      description: Please search to see if an issue already exists for the documentation you want to update.
       options:
        - label: I have searched the existing issues.
          required: true
@@ -28,7 +28,7 @@ body:
   - type: textarea
     attributes:
       label: Anything else?
-      description: Anything other than the above mentioned to support your bug report.
+      description: Anything other than the above mentioned to support your documentation update report.
         Links? References? Screenshots? Anything that will give us more context about the documentation changes you want to make!
   - type: checkboxes
     id: terms
