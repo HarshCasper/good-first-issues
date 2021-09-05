@@ -1,0 +1,26 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+
+<body>
+    <a href="/addRepository">Add repository</a>
+    {% for repository in repositories %}
+    <h1>{{ repository.title }}</h1>
+    <h2>{{ repository.owner}}</h2>
+    <p>{{ repository.description }}</p>
+    <p>url:{{ repository.url }}</p>
+    <p>language:{{ repository.language }}</p>
+    <p>stars:{{ repository.stars }}</p>
+    <form action="/viewDetailsOfRepository" method="POST">
+        <input type="submit" name="owner_title" value="{{repository.owner}},{{repository.title}}" title="See issues">
+    </form>
+    <br><br><br><br><br>
+    {% endfor %}
+</body>
+
+</html>
