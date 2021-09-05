@@ -150,3 +150,8 @@ html, body {
     color: blanchedalmond;
     margin: 34px 3px;
 }
+.card{
+    margin:15px;
+    width: 65%;
+    background-color: rgba(219, 33, 33, 0.63);
+}
