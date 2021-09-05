@@ -4,34 +4,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{url_for('static',filename='style.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>Details</title>
 </head>
 
-<body>
+<body style="overflow: scroll; color: ivory; background-color: #1167a0;">
     <center>
-        <div id="wb_Text1" style="left:581px;top:25px;width:322px;height:60px;z-index:1;">
-            <span style="color:#FFFFFF;font-family:Impact;font-size:48px;"><u>{{general_info['name']}}</u></span>
+        <h1>
+            <u>{{general_info['name']}}</u>
+        </h1>
+    </center>
+    <center>
+        <div class="card text-white bg-success mb-3" style="max-width: 28rem; max-height:300px">
+            open issues: {{general_info['open_issues']}}
+            <br>
+            url: {{general_info['html_url']}}
+            <br>
+            created at: {{general_info['created_at']}}
+            <br>
+            updated_at: {{general_info['updated_at']}}
+            <br>
+            <p> {{general_info['description']}} </p>
         </div>
     </center>
-    {{general_info['description']}}
-    <br>
-    open issues: {{general_info['open_issues']}}
-    <br>
-    url: {{general_info['html_url']}}
-    <br>
-    created at: {{general_info['created_at']}}
-    <br>
+
+    <h2 style="margin-left: 15px;">Issues</h2>
     {% for issue in issues %}
     {% for label in issue['labels'] %}
+
     {% if label['name'] == 'good first issue' %}
-    {{issue['number']}} {{issue['title']}}
-    <br>
-    url: {{issue['html_url']}}
-    <br>
-    body: {{issue['body']}}
-    <br>
+    <div class="card border-secondary mb-3" style="color:black; width: 95%;">
+        <h3><i> #{{issue['number']}}: {{issue['title']}}</i></h3>
+        <br>
+        <h5>url: {{issue['html_url']}}</h5>
+        <br>
+        <p>{{issue['body']}}</p>
+    </div>
     {% endif %}
+
     {% endfor %}
+    <br>
     {% endfor %}
 </body>
 
