@@ -1,0 +1,39 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{url_for('static',filename='style.css')}}" rel="stylesheet">
+    <title>Add Repository</title>
+</head>
+
+<body>
+    <div class="form-body">
+        <div class="row">
+            <div class="form-holder">
+                <div class="form-content">
+                    <div class="form-items">
+                        <h3>Add your repository</h3>
+                        <p>Enter your repository details</p>
+                        <form action="/addRepository" method="POST">
+                            <div class="col-md-12">
+                                <input class="form-control" type="text" name="owner" placeholder="Enter name of owner"
+                                    required>
+
+                                <input class="form-control" type="text" name="title"
+                                    placeholder="Enter title of repository" required>
+
+                                <div class="form-button mt-3">
+                                    <button id="submit" type="submit" class="btn btn-primary">Submit</button>
+                                </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
