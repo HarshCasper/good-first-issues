@@ -2,7 +2,7 @@ import requests
 import os
 from pprint import pprint
 
-token = "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"
+token = "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"
 
 
 def get_issues(owner, title):
