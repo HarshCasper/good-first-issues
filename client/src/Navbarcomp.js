@@ -1,47 +1,51 @@
-import React, { Component } from 'react';
-import "./Navbarcomp.css";
-import {Navbar,Nav,NavDropdown,Form,FormControl,Button} from 'react-bootstrap'
-import { Link } from 'react-router-dom';
-export default class Navbarcomp extends Component {
-    render() {
-        return (
-            <div>
-                <Navbar bg="light" expand="lg">
-  <Navbar.Brand href="#">Good First Issues</Navbar.Brand>
-  <Navbar.Toggle aria-controls="navbarScroll" />
-  <Navbar.Collapse id="navbarScroll">
-    <Nav
-      className="mr-auto my-2 my-lg-0"
-      style={{ maxHeight: '100px' }}
-      navbarScroll
-    >
-      <Nav.Link href="#action1"><Link to="/home">Home</Link></Nav.Link>
-      <Nav.Link href="#action1"><Link to="/about">About Us</Link></Nav.Link>
-      <Nav.Link href="#action1"><Link to="/opensource">Explore OpenSource</Link></Nav.Link>
-      
-     
-      <NavDropdown title="Categories" id="navbarScrollingDropdown">
-        <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-        <NavDropdown.Item href="#action4">Another action</NavDropdown.Item>
-        <NavDropdown.Divider />
-        <NavDropdown.Item href="#action5">Something else here</NavDropdown.Item>
-      </NavDropdown>
-      <Nav.Link href="#" disabled>
-        Link
-      </Nav.Link>
-    </Nav>
-    <Form className="d-flex">
-      <FormControl
-        type="search"
-        placeholder="Search"
-        className="mr-2"
-        aria-label="Search"
-      />
-      <Button variant="outline-success">Search</Button>
-    </Form>
-  </Navbar.Collapse>
-</Navbar>
-            </div>
-        )
-    }
+import React from 'react';
+import { Nav, Navbar, Container } from 'react-bootstrap';
+// Import the necessary Clerk components
+import { SignedIn, SignedOut, UserButton, SignInButton } from "@clerk/clerk-react"; 
+
+function Navbarcomp() {
+  return (
+    <Navbar bg="light" expand="lg">
+      <Container>
+        <Navbar.Brand href="/home">Your App Name</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link href="/home">Home</Nav.Link>
+            <Nav.Link href="/about">About</Nav.Link>
+            {/* The Opensource link should be available even if protected */}
+            <Nav.Link href="/opensource">Opensource (Protected)</Nav.Link> 
+          </Nav>
+          
+          {/* --- CLERK AUTHENTICATION BUTTONS START HERE --- */}
+          <Nav>
+            {/* 1. Show the UserButton (Account management/Sign Out) when signed in */}
+            <SignedIn>
+              <div style={{ padding: '0 10px' }}>
+                <UserButton afterSignOutUrl="/home" />
+              </div>
+            </SignedIn>
+            
+            {/* 2. Show the Sign In/Sign Up button when signed out */}
+            <SignedOut>
+              <Nav.Link>
+                {/* The SignInButton component will render a button 
+                  that opens Clerk's pre-built sign-in/sign-up modal.
+                */}
+                <SignInButton mode="modal">
+                  <button className="btn btn-primary">
+                    Sign In / Sign Up
+                  </button>
+                </SignInButton>
+              </Nav.Link>
+            </SignedOut>
+          </Nav>
+          {/* --- CLERK AUTHENTICATION BUTTONS END HERE --- */}
+          
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+  );
 }
+
+export default Navbarcomp;
