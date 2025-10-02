@@ -3,22 +3,24 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@clerk/clerk-react": "^5.49.1",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "ajv": "^8.17.1",
+    "ajv-keywords": "^5.1.0",
     "bootstrap": "^5.0.2",
-    "react": "^17.0.2",
+    "react": "^18.3.1",
     "react-bootstrap": "^1.6.1",
-    "react-dom": "^17.0.2",
+    "react-dom": "^18.3.1",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.3",
+    "react-scripts": "^5.0.1",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --passWithNoTests",
-    "eject": "react-scripts eject"
+    "start": "set NODE_OPTIONS=--openssl-legacy-provider && react-scripts start",
+    "build": "set NODE_OPTIONS=--openssl-legacy-provider && react-scripts build",
+    "test": "set NODE_OPTIONS=--openssl-legacy-provider && react-scripts test --passWithNoTests"
   },
   "eslintConfig": {
     "extends": [
